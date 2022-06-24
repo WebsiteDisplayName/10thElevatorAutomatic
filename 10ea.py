@@ -48,15 +48,14 @@ class CfgMusic
                         audio = AudioSegment.from_file(
                             configFilePath + "/" + i)
                         myfile.write('''
-
-		class ''' + dir[0:5] + '''_''' + str(counter) + '''
+		class ''' + dir[0:7] + '''_''' + str(counter) + '''
 	{
 		name = "''' + i[0:-4] + '''";
 		sound[] = {"''' + dir + '''\\''' + i + '''",1,1};
 		theme = "''' + dir + '''";
 		duration = "''' + str(int(audio.duration_seconds)) + '''";
 		musicClass = "''' + dir + '''";
-	};                           
+	};
 ''')
                         counter += 1
 
