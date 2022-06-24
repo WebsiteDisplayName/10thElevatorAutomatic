@@ -42,25 +42,25 @@ class CfgMusic
 {''')
             # https://stackoverflow.com/questions/10377998/how-can-i-iterate-over-files-in-a-given-directory
             for subdir, dirs, files in os.walk(configFilePath):
-                for i in files:
-                    counter = 1
-                    if i.endswith(".ogg"):
-                        audio = AudioSegment.from_file(file_path)
-                        myfile.write('''
+				counter = 1
+				for i in files:
+					if i.endswith(".ogg"):
+						audio = AudioSegment.from_file(configFilePath + "/" + i)
+						myfile.write('''
 
 		class ''' + dir[0:5] + '''_''' + str(counter) + '''
 	{
 		name = "''' + i[0:-4] + '''";
 		sound[] = {"''' + dir + '''\\''' + i + '''",1,1};
 		theme = "'''+ dir +'''";
-		duration = "''' + audio.duration_seconds + '''";
+		duration = "''' + str(int(audio.duration_seconds)) + '''";
 		musicClass = "'''+ dir +'''";
 	};                           
 ''')
-                        counter += 1
+						counter += 1
 
 
-            myfile.write('''
+				myfile.write('''
 
 };''')
 

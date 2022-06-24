@@ -25,9 +25,9 @@ class CfgMusic
 		class 10ea3_1
 	{
 		name = "Star Wars-Droid army theme";
-		sound[] = {"10ea3\Bleach OST - Stand Up Be Strong - Lyrics -.ogg",1,1};
+		sound[] = {"10ea3\Star Wars-Droid army theme.ogg",1,1};
 		theme = "10ea3";
-		duration = "399";
+		duration = "184";
 		musicClass = "10ea3";
 	};                           
 
