@@ -1,5 +1,8 @@
 
 
+# execute with <py 10ca.py> while in same directory, select parent folder
+# creates config file based off of .ogg files inside directory
+
 from pydub import AudioSegment
 import os
 import os.path
@@ -10,7 +13,7 @@ from tkinter.filedialog import askdirectory
 
 # root = 10thElevatorMusic (work folder)
 # shows dialog box and return the root
-root = askdirectory(title='Select Folder')
+root = askdirectory(title='Select Root Folder')
 
 
 for subdir, dirs, files in os.walk(root):
