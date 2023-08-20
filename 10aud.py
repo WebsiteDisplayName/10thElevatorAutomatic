@@ -11,8 +11,9 @@ import os
 # returns textFile object NOT PATH
 
 # need to keep songFolder EMPTY, or else formatting will overwrite everything?
-songFolder = askdirectory(title='Select Folder To Save Songs In')
-textFileObject = askopenfile(title='Select text file with YT URLs')
+print(os.getcwd())
+songFolder = askdirectory(initialdir=os.getcwd(), title='Select Folder To Save Songs In')
+textFileObject = askopenfile(initialdir=os.getcwd(), title='Select text file with YT URLs')
 
 
 URLs = textFileObject.readlines()
@@ -51,3 +52,6 @@ for subdir, dirs, files in os.walk(songFolder):
             continue
         else:
             os.remove(os.path.join(songFolder, i))
+
+# ffmpeg error
+# https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/
